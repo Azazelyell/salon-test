@@ -3,509 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Салон красоты - Макет</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Шапка */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d4af37;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 16px;
-        }
-
-        .menu a:hover {
-            color: #d4af37;
-        }
-
-        /* Hero секция */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 20px;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        }
-
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            background: #d4af37;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn:hover {
-            background: #c4a027;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: #d4af37;
-            color: white;
-        }
-
-        /* Услуги */
-        .services {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: #777;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            border: 1px solid #f0f0f0;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: #fdf8ed;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 40px;
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .price {
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 22px;
-            margin-bottom: 25px;
-        }
-
-        .card-btn {
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        .card-btn:hover {
-            background: #d4af37;
-            color: white;
-        }
-
-        /* Форма записи */
-        .appointment {
-            background: #f9f9f9;
-            padding: 80px 20px;
-        }
-
-        .appointment-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .appointment-info {
-            background: linear-gradient(135deg, #d4af37, #c4a027);
-            color: white;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .appointment-info h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .appointment-info p {
-            margin-bottom: 30px;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .appointment-form {
-            padding: 50px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
-
-        .submit-btn {
-            background: #d4af37;
-            color: white;
-            padding: 16px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #c4a027;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Преимущества */
-        .features {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .feature-number {
-            width: 50px;
-            height: 50px;
-            background: #d4af37;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        .feature h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            color: #777;
-            line-height: 1.6;
-        }
-
-        /* Подвал */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-column h4 {
-            color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-column p, .footer-column a {
-            color: #999;
-            line-height: 2;
-            text-decoration: none;
-            display: block;
-        }
-
-        .footer-column a:hover {
-            color: #d4af37;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid #333;
-            color: #777;
-        }
-
-        /* Модальное окно (заглушка) */
-        .modal-demo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 400px;
-            text-align: center;
-            animation: slideIn 0.3s;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h3 {
-            color: #d4af37;
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
-
-        .modal-content p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .modal-close {
-            background: #d4af37;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .appointment-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 32px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Салон красоты - Главная</title>
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Шапка с рабочими ссылками -->
     <header>
         <nav>
             <div class="logo">Beauty Salon</div>
             <ul class="menu">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Мастера</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="masters.html">Мастера</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -514,11 +25,11 @@
     <section class="hero">
         <h1>Добро пожаловать в мир красоты</h1>
         <p>Профессиональный уход за волосами, лицом и телом в уютной атмосфере</p>
-        <a href="#" class="btn">Записаться онлайн</a>
-        <a href="#" class="btn btn-outline" style="margin-left: 15px;">Наши работы</a>
+        <a href="contacts.html" class="btn">Записаться онлайн</a>
+        <a href="masters.html" class="btn btn-outline" style="margin-left: 15px;">Наши мастера</a>
     </section>
 
-    <!-- Услуги -->
+    <!-- Услуги (краткий обзор) -->
     <section class="services">
         <div class="section-title">
             <h2>Наши услуги</h2>
@@ -531,7 +42,7 @@
                 <h3>Стрижка</h3>
                 <p>Женские, мужские и детские стрижки любой сложности</p>
                 <div class="price">от 1500 ₽</div>
-                <button class="card-btn" onclick="showModal('Стрижка')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
             
             <div class="service-card">
@@ -539,7 +50,7 @@
                 <h3>Окрашивание</h3>
                 <p>Классическое, сложное окрашивание, мелирование</p>
                 <div class="price">от 3000 ₽</div>
-                <button class="card-btn" onclick="showModal('Окрашивание')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
             
             <div class="service-card">
@@ -547,7 +58,7 @@
                 <h3>Маникюр</h3>
                 <p>Покрытие гель-лаком, дизайн, укрепление ногтей</p>
                 <div class="price">от 2000 ₽</div>
-                <button class="card-btn" onclick="showModal('Маникюр')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
             
             <div class="service-card">
@@ -555,7 +66,7 @@
                 <h3>Макияж</h3>
                 <p>Дневной, вечерний, свадебный макияж</p>
                 <div class="price">от 2500 ₽</div>
-                <button class="card-btn" onclick="showModal('Макияж')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
             
             <div class="service-card">
@@ -563,7 +74,7 @@
                 <h3>Брови</h3>
                 <p>Коррекция, окрашивание, ламинирование бровей</p>
                 <div class="price">от 1200 ₽</div>
-                <button class="card-btn" onclick="showModal('Брови')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
             
             <div class="service-card">
@@ -571,73 +82,16 @@
                 <h3>Уход за лицом</h3>
                 <p>Чистка, пилинги, массаж лица</p>
                 <div class="price">от 2000 ₽</div>
-                <button class="card-btn" onclick="showModal('Уход за лицом')">Записаться</button>
+                <a href="services.html" class="card-btn">Подробнее</a>
             </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="services.html" class="btn">Все услуги и цены</a>
         </div>
     </section>
 
-    <!-- Форма записи -->
-    <section class="appointment">
-        <div class="appointment-container">
-            <div class="appointment-info">
-                <h3>Запишитесь онлайн</h3>
-                <p>Оставьте заявку и наш администратор свяжется с вами в ближайшее время для подтверждения записи</p>
-                
-                <div class="info-item">
-                    <div class="info-icon">📞</div>
-                    <div>+7 (999) 123-45-67</div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-icon">📍</div>
-                    <div>ул. Пушкина, д. 10</div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-icon">⏰</div>
-                    <div>Ежедневно с 10:00 до 21:00</div>
-                </div>
-            </div>
-            
-            <div class="appointment-form">
-                <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" placeholder="Введите имя">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" placeholder="+7 (___) ___-__-__">
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">Услуга</label>
-                    <select id="service">
-                        <option>Стрижка</option>
-                        <option>Окрашивание</option>
-                        <option>Маникюр</option>
-                        <option>Педикюр</option>
-                        <option>Макияж</option>
-                        <option>Брови</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date">Желаемая дата</label>
-                    <input type="date" id="date">
-                </div>
-                
-                <div class="form-group">
-                    <label for="comment">Комментарий</label>
-                    <textarea id="comment" rows="3" placeholder="Ваши пожелания..."></textarea>
-                </div>
-                
-                <button class="submit-btn" onclick="showModal()">Записаться</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Преимущества -->
+    <!-- О нас (кратко) -->
     <section class="features">
         <div class="section-title">
             <h2>Почему выбирают нас</h2>
@@ -669,9 +123,116 @@
                 <p>Гибкая система скидок и специальные предложения для постоянных клиентов</p>
             </div>
         </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="about.html" class="btn btn-outline">Подробнее о нас</a>
+        </div>
     </section>
 
-    <!-- Подвал -->
+    <!-- Форма записи -->
+    <section class="appointment">
+        <div class="appointment-container">
+            <div class="appointment-info">
+                <h3>Запишитесь онлайн</h3>
+                <p>Оставьте заявку и наш администратор свяжется с вами в ближайшее время для подтверждения записи</p>
+                
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>+7 (999) 123-45-67</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>ул. Пушкина, д. 10</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>Ежедневно с 10:00 до 21:00</div>
+                </div>
+                
+                <a href="contacts.html" class="btn" style="margin-top: 20px; text-align: center;">Контакты и схема проезда</a>
+            </div>
+            
+            <div class="appointment-form">
+                <form action="contacts.html" method="get">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Введите имя">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Услуга</label>
+                        <select id="service">
+                            <option>Стрижка</option>
+                            <option>Окрашивание</option>
+                            <option>Маникюр</option>
+                            <option>Педикюр</option>
+                            <option>Макияж</option>
+                            <option>Брови</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Желаемая дата</label>
+                        <input type="date" id="date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" rows="3" placeholder="Ваши пожелания..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши мастера (кратко) -->
+    <section class="services" style="margin-top: 0;">
+        <div class="section-title">
+            <h2>Наши мастера</h2>
+            <p>Профессионалы с опытом работы от 5 лет</p>
+        </div>
+        
+        <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="service-card">
+                <div class="service-icon">👩‍🦰</div>
+                <h3>Анна Соколова</h3>
+                <p>Топ-стилист, колорист</p>
+                <p style="font-size: 14px;">Опыт: 12 лет</p>
+                <a href="masters.html" class="card-btn">Подробнее</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">👩‍🎨</div>
+                <h3>Екатерина Морозова</h3>
+                <p>Мастер ногтевого сервиса</p>
+                <p style="font-size: 14px;">Опыт: 8 лет</p>
+                <a href="masters.html" class="card-btn">Подробнее</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💆‍♀️</div>
+                <h3>Дарья Волкова</h3>
+                <p>Косметолог-эстетист</p>
+                <p style="font-size: 14px;">Опыт: 10 лет</p>
+                <a href="masters.html" class="card-btn">Подробнее</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="masters.html" class="btn">Все мастера</a>
+        </div>
+    </section>
+
+    <!-- Подвал с рабочими ссылками -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
@@ -681,10 +242,11 @@
             
             <div class="footer-column">
                 <h4>Навигация</h4>
-                <a href="#">Главная</a>
-                <a href="#">О нас</a>
-                <a href="#">Услуги</a>
-                <a href="#">Контакты</a>
+                <a href="index.html">Главная</a>
+                <a href="about.html">О нас</a>
+                <a href="services.html">Услуги</a>
+                <a href="masters.html">Мастера</a>
+                <a href="contacts.html">Контакты</a>
             </div>
             
             <div class="footer-column">
@@ -702,69 +264,10 @@
         </div>
         
         <div class="copyright">
-            <p>© 2025 Beauty Salon. Все права защищены. (Демо-версия без PHP)</p>
+            <p>© 2025 Beauty Salon. Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Модальное окно (заглушка) -->
-    <div class="modal-demo" id="modal">
-        <div class="modal-content">
-            <h3>Спасибо!</h3>
-            <p>Это демо-версия сайта. Кнопки работают как заглушки.</p>
-            <p>✨ Полная версия с отправкой заявок в базу данных будет готова после установки OpenServer ✨</p>
-            <button class="modal-close" onclick="closeModal()">Закрыть</button>
-        </div>
-    </div>
-
-    <script>
-        function showModal(service) {
-            const modal = document.getElementById('modal');
-            const modalContent = modal.querySelector('.modal-content');
-            const title = modalContent.querySelector('h3');
-            
-            if (service) {
-                title.textContent = `Запись на "${service}"`;
-            } else {
-                title.textContent = 'Спасибо!';
-            }
-            
-            modal.style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        // Закрытие по клику вне модалки
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Обработка отправки формы
-        document.querySelector('.submit-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            showModal();
-        });
-
-        // Добавляем обработчики для всех кнопок "Записаться" в карточках
-        document.querySelectorAll('.card-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const service = this.closest('.service-card').querySelector('h3').textContent;
-                showModal(service);
-            });
-        });
-
-        // Обработка ссылок (чтобы не перезагружали страницу)
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                showModal('Переход по ссылке');
-            });
-        });
-    </script>
+    <!-- Убрал модальное окно и JavaScript, так как теперь все ссылки рабочие -->
 </body>
 </html>
