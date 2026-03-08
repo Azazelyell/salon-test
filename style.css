@@ -1,496 +1,501 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
 
-        /* Шапка */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* Шапка */
+header {
+    background: #FFE4E1;
+    /* очень светлый розовый (misty rose) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d4af37;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff99bb;
+    /* более темный розовый для контраста */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-        .menu {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
 
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 16px;
-        }
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
 
-        .menu a:hover {
-            color: #d4af37;
-        }
+.menu a:hover,
+.menu a.active {
+    color: #ff99bb;
+}
 
-        /* Hero секция */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 20px;
-        }
+/* Hero секции для всех страниц */
+.hero,
+.page-hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+}
 
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+.hero::before,
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
 
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        }
+.hero h1,
+.page-hero h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
 
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            background: #d4af37;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-        }
+.hero p,
+.page-hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
 
-        .btn:hover {
-            background: #c4a027;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
+/* Hero для главной - черно-белая версия */
+.hero-home {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            box-shadow: none;
-        }
+/* Hero для О нас - черно-белая версия */
+.hero-about {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    filter: grayscale(100%);
+}
 
-        .btn-outline:hover {
-            background: #d4af37;
-            color: white;
-        }
+/* Hero для Услуг - черно-белая версия */
+.hero-services {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    filter: grayscale(100%);
+}
 
-        /* Услуги */
-        .services {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
+/* Hero для Мастеров - черно-белая версия */
+.hero-masters {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    filter: grayscale(100%);
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+/* Hero для Контактов - черно-белая версия */
+.hero-contacts {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    filter: grayscale(100%);
+}
 
-        .section-title h2 {
-            font-size: 42px;
-            color: #333;
-            margin-bottom: 15px;
-        }
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background: #FFB6C1;
+    /* нежно-розовый */
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+    position: relative;
+    z-index: 2;
+}
 
-        .section-title p {
-            color: #777;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.btn:hover {
+    background: #ff99bb;
+    /* более темный розовый */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+.btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    box-shadow: none;
+}
 
-        .service-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            border: 1px solid #f0f0f0;
-        }
+.btn-outline:hover {
+    background: #FFB6C1;
+    border-color: #FFB6C1;
+    color: white;
+}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
+/* Услуги */
+.services {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: #fdf8ed;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 40px;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
+.section-title h2 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 15px;
+}
 
-        .service-card p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
+.section-title p {
+    color: #FFB6C1;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .price {
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 22px;
-            margin-bottom: 25px;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-        .card-btn {
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #f0f0f0;
+}
 
-        .card-btn:hover {
-            background: #d4af37;
-            color: white;
-        }
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
 
-        /* Форма записи */
-        .appointment {
-            background: #f9f9f9;
-            padding: 80px 20px;
-        }
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: #FFB6C1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 40px;
+    color: #fff;
+}
 
-        .appointment-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
 
-        .appointment-info {
-            background: linear-gradient(135deg, #d4af37, #c4a027);
-            color: white;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
 
-        .appointment-info h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+.price {
+    color: #FFB6C1;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
 
-        .appointment-info p {
-            margin-bottom: 30px;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
+.card-btn {
+    background: transparent;
+    border: 2px solid #FFB6C1;
+    color: #FFB6C1;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
 
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+.card-btn:hover {
+    background: #FFB6C1;
+    color: white;
+}
 
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
+/* Форма записи */
+.appointment {
+    background: #f9f9f9;
+    padding: 80px 20px;
+}
 
-        .appointment-form {
-            padding: 50px;
-        }
+.appointment-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.appointment-info {
+    background: linear-gradient(135deg, #FFB6C1, #ffdd86);
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.appointment-info h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
+.appointment-info p {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    opacity: 0.95;
+}
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
 
-        .submit-btn {
-            background: #d4af37;
-            color: white;
-            padding: 16px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
 
-        .submit-btn:hover {
-            background: #c4a027;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
-        }
+.info-item div {
+    color: white;
+}
 
-        /* Преимущества */
-        .features {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
+.appointment-form {
+    padding: 50px;
+}
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
 
-        .feature {
-            text-align: center;
-            padding: 30px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .feature-number {
-            width: 50px;
-            height: 50px;
-            background: #d4af37;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            font-size: 24px;
-        }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: #fff;
+    color: #333;
+}
 
-        .feature h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FFB6C1;
+}
 
-        .feature p {
-            color: #777;
-            line-height: 1.6;
-        }
+.submit-btn {
+    background: #FFB6C1;
+    color: white;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
 
-        /* Подвал */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 50px 0 20px;
-        }
+.submit-btn:hover {
+    background: #ff99bb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 182, 193, 0.4);
+}
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
+/* Преимущества */
+.features {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
 
-        .footer-column h4 {
-            color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
 
-        .footer-column p, .footer-column a {
-            color: #999;
-            line-height: 2;
-            text-decoration: none;
-            display: block;
-        }
+.feature {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-        .footer-column a:hover {
-            color: #d4af37;
-        }
+.feature-number {
+    width: 50px;
+    height: 50px;
+    background: #FFB6C1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 24px;
+}
 
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid #333;
-            color: #777;
-        }
+.feature h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
 
-        /* Модальное окно (заглушка) */
-        .modal-demo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
+.feature p {
+    color: #666;
+    line-height: 1.6;
+}
 
-        .modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 400px;
-            text-align: center;
-            animation: slideIn 0.3s;
-        }
+/* Подвал */
+footer {
+    background: #302626;
+    /* более темный розовый */
+    color: white;
+    padding: 50px 0 20px;
+}
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
 
-        .modal-content h3 {
-            color: #d4af37;
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
+.footer-column h4 {
+    color: #FFE4E1;
+    /* светлый розовый для заголовков */
+    margin-bottom: 20px;
+    font-size: 18px;
+}
 
-        .modal-content p {
-            color: #666;
-            margin-bottom: 25px;
-        }
+.footer-column p,
+.footer-column a {
+    color: white;
+    line-height: 2;
+    text-decoration: none;
+    display: block;
+    opacity: 0.9;
+}
 
-        .modal-close {
-            background: #d4af37;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.footer-column a:hover {
+    color: #FFE4E1;
+    /* светлый розовый при наведении */
+}
 
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .appointment-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 32px;
-            }
-        }
-        /* ======== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ НОВЫХ СТРАНИЦ ======== */
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #FFE4E1;
+    /* светлая линия */
+    color: white;
+    opacity: 0.8;
+}
 
 /* Общие элементы для всех страниц */
 .page-header {
-    background: linear-gradient(135deg, #d4af37, #c4a027);
+    background: linear-gradient(135deg, #FFB6C1, #302626);
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -499,6 +504,7 @@
 .page-header h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    color: white;
 }
 
 .page-header p {
@@ -506,6 +512,7 @@
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.95;
+    color: white;
 }
 
 .container {
@@ -516,8 +523,7 @@
 
 /* Активная ссылка в меню */
 .menu a.active {
-    color: #d4af37;
-    font-weight: bold;
+    color: #ff99bb;
 }
 
 /* ======== СТРАНИЦА "О НАС" ======== */
@@ -532,13 +538,16 @@
 .history-image {
     width: 100%;
     height: 400px;
-    background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: #d4af37;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.history-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Убрали filter: grayscale - изображение цветное */
 }
 
 .history-content h2 {
@@ -558,6 +567,14 @@
     padding: 80px 0;
 }
 
+.values .section-title h2 {
+    color: #333;
+}
+
+.values .section-title p {
+    color: #FFB6C1;
+}
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -566,28 +583,30 @@
 }
 
 .value-card {
-    background: white;
+    background: #fff;
     padding: 40px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .value-icon {
     width: 80px;
     height: 80px;
-    background: #fdf8ed;
+    background: #FFB6C1;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 25px;
     font-size: 40px;
+    color: white;
 }
 
 .value-card h3 {
     font-size: 24px;
     margin-bottom: 15px;
+    color: #333;
 }
 
 .value-card p {
@@ -596,7 +615,7 @@
 }
 
 .stats {
-    background: white;
+    background: #fff;
     padding: 80px 0;
 }
 
@@ -609,18 +628,20 @@
 
 .stat-item {
     padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
 }
 
 .stat-number {
     font-size: 48px;
     font-weight: bold;
-    color: #d4af37;
+    color: #FFB6C1;
     margin-bottom: 10px;
 }
 
 .stat-label {
     font-size: 18px;
-    color: #666;
+    color: #333;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -635,7 +656,7 @@
     color: #333;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #d4af37;
+    border-bottom: 3px solid #FFB6C1;
     display: inline-block;
 }
 
@@ -643,7 +664,7 @@
     background: #f9f9f9;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .service-item {
@@ -661,7 +682,7 @@
 }
 
 .service-item:hover {
-    background: white;
+    background: #fff;
 }
 
 .service-info h3 {
@@ -671,36 +692,37 @@
 }
 
 .service-info p {
-    color: #777;
+    color: #666;
     font-size: 14px;
 }
 
 .service-price {
     font-size: 24px;
     font-weight: bold;
-    color: #d4af37;
+    color: #FFB6C1;
     margin-right: 20px;
 }
 
 .service-btn {
     background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
+    border: 2px solid #FFB6C1;
+    color: #FFB6C1;
     padding: 8px 20px;
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .service-btn:hover {
-    background: #d4af37;
+    background: #FFB6C1;
     color: white;
 }
 
 .promo-section {
-    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    background: linear-gradient(135deg, #f9f9f9, #e8e8e8);
     padding: 80px 0;
     margin: 40px 0;
 }
@@ -713,19 +735,19 @@
 }
 
 .promo-card {
-    background: white;
+    background: #fff;
     border-radius: 15px;
     padding: 40px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .promo-badge {
     position: absolute;
     top: 20px;
     right: -30px;
-    background: #d4af37;
+    background: #FFB6C1;
     color: white;
     padding: 8px 40px;
     transform: rotate(45deg);
@@ -747,7 +769,7 @@
 }
 
 .new-price {
-    color: #d4af37;
+    color: #FFB6C1;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -762,25 +784,33 @@
 }
 
 .master-card {
-    background: white;
+    background: #fff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
 .master-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .master-photo {
     height: 350px;
-    background: linear-gradient(45deg, #d4af37, #f5f5f5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 100px;
-    color: white;
+    overflow: hidden;
+}
+
+.master-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Убрали filter: grayscale - изображения цветные */
+    transition: transform 0.3s;
+}
+
+.master-card:hover .master-photo img {
+    transform: scale(1.05);
 }
 
 .master-info {
@@ -795,7 +825,7 @@
 }
 
 .master-specialty {
-    color: #d4af37;
+    color: #FFB6C1;
     font-weight: bold;
     margin-bottom: 15px;
     font-size: 16px;
@@ -808,7 +838,7 @@
 }
 
 .master-description {
-    color: #777;
+    color: #666;
     line-height: 1.8;
     margin-bottom: 25px;
     font-size: 14px;
@@ -834,7 +864,7 @@
 }
 
 .social-link:hover {
-    background: #d4af37;
+    background: #FFB6C1;
     color: white;
 }
 
@@ -870,7 +900,7 @@
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: #d4af37;
+    background: #FFB6C1;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -899,7 +929,7 @@
 }
 
 .contact-text a:hover {
-    color: #d4af37;
+    color: #FFB6C1;
 }
 
 .contact-map {
@@ -908,36 +938,31 @@
     border-radius: 20px;
 }
 
+.contact-map h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
 .map-container {
     margin-top: 20px;
-    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.map-placeholder {
+.map-container iframe {
+    width: 100%;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
-    font-size: 60px;
-    color: #d4af37;
-    text-align: center;
-}
-
-.map-placeholder p {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #666;
+    border: 0;
+    /* Убрали filter: grayscale - карта цветная */
 }
 
 .working-hours {
     margin-top: 40px;
-    background: white;
+    background: #fff;
     padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .working-hours h3 {
@@ -963,37 +988,79 @@
 }
 
 .hours-row .time {
-    color: #d4af37;
+    color: #FFB6C1;
 }
 
-/* Адаптивность для новых страниц */
+/* Спасибо страница */
+.thank-you {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.thank-you h1 {
+    font-size: 48px;
+    color: #FFB6C1;
+    margin-bottom: 20px;
+}
+
+.thank-you p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .page-header h1 {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: 36px;
+    }
+
+    .appointment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
         font-size: 32px;
     }
-    
+
     .history {
         grid-template-columns: 1fr;
     }
-    
+
     .service-item {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 10px;
     }
-    
+
     .service-price {
         margin-right: 0;
     }
-    
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .masters-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .promo-grid {
         grid-template-columns: 1fr;
     }
