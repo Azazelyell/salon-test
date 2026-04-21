@@ -1,0 +1,94 @@
+<?php $pageTitle = 'О нас'; ?>
+<?php include 'header.php'; ?>
+
+    <!-- Hero секция для страницы О нас -->
+    <section class="page-hero hero-about">
+        <h1>О нашем салоне</h1>
+        <p>История, философия и ценности Beauty Salon</p>
+    </section>
+
+    <div class="container">
+        <div class="history">
+            <div class="history-image">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Наш салон">
+            </div>
+            <div class="history-content">
+                <h2>Наша история</h2>
+                <p>Beauty Salon открыл свои двери в 2015 году. За это время мы превратились из маленького кабинета в один из самых уютных салонов города, сохранив при этом атмосферу тепла и заботы о каждом клиенте.</p>
+                <p>Мы начинали с двух мастеров и одного кресла. Сегодня у нас работают 15 профессионалов, а наши клиенты стали настоящими друзьями. Мы гордимся тем, что многие приходят к нам семьями — от бабушек до внучек.</p>
+                <p>В 2020 году мы провели полный ребрендинг, расширили пространство и добавили новые услуги. Но главное осталось неизменным — любовь к своему делу и искреннее желание делать людей красивее и счастливее.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши ценности</h2>
+                <p>Пять принципов, которым мы не изменяем никогда</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Любовь к деталям</h3>
+                    <p>Мы замечаем то, что не видят другие. Идеальная линия, ровный тон, комфортная температура воды — мелочей не бывает.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🫂</div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Нет двух одинаковых людей, и не может быть двух одинаковых стрижек. Мы ищем решение именно для вас, а не копируем из журнала.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🌿</div>
+                    <h3>Экологичность</h3>
+                    <p>Мы используем только профессиональную косметику, которая не тестируется на животных. Заботимся о природе и вашем здоровье.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📚</div>
+                    <h3>Постоянное развитие</h3>
+                    <p>Каждый месяц наши мастера проходят обучение, посещают мастер-классы и семинары. Мы в курсе всех трендов.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🏠</div>
+                    <h3>Атмосфера дома</h3>
+                    <p>У нас не пахнет краской и химией. У нас пахнет кофе, уютом и расслаблением. Приходите как к себе домой.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Честность</h3>
+                    <p>Мы не навязываем лишние услуги. Если вам не нужно окрашивание — мы скажем об этом честно и посоветуем, что действительно нужно.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">лет работы</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">мастеров</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">довольных клиентов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">видов услуг</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php include 'footer.php'; ?>

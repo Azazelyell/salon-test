@@ -1,0 +1,204 @@
+<?php $pageTitle = 'Услуги'; ?>
+<?php include 'header.php'; ?>
+
+    <!-- Hero секция для страницы Услуг -->
+    <section class="page-hero hero-services">
+        <h1>Услуги и цены</h1>
+        <p>Прозрачные цены и профессиональный подход</p>
+    </section>
+
+    <div class="container">
+        <!-- Парикмахерские услуги -->
+        <div class="service-category">
+            <h2 class="category-title">💇‍♀️ Парикмахерские услуги</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Женская стрижка</h3>
+                        <p>Стрижка любой сложности с укладкой</p>
+                    </div>
+                    <div class="service-price">2500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Мужская стрижка</h3>
+                        <p>Классическая или модельная стрижка</p>
+                    </div>
+                    <div class="service-price">1800 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Детская стрижка</h3>
+                        <p>Для детей до 12 лет</p>
+                    </div>
+                    <div class="service-price">1500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Окрашивание в один тон</h3>
+                        <p>Краска премиум-класса</p>
+                    </div>
+                    <div class="service-price">3500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Сложное окрашивание</h3>
+                        <p>Омбре, шатуш, балаяж, мелирование</p>
+                    </div>
+                    <div class="service-price">от 5500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Уход за волосами</h3>
+                        <p>Ботокс, ламинирование, кератиновое выпрямление</p>
+                    </div>
+                    <div class="service-price">от 4000 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ногтевой сервис -->
+        <div class="service-category">
+            <h2 class="category-title">💅 Ногтевой сервис</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Маникюр классический</h3>
+                        <p>Обрезной или аппаратный маникюр</p>
+                    </div>
+                    <div class="service-price">1800 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Покрытие гель-лаком</h3>
+                        <p>Стойкое покрытие до 3-х недель</p>
+                    </div>
+                    <div class="service-price">2200 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Дизайн ногтей</h3>
+                        <p>Рисунки, стразы, втирка</p>
+                    </div>
+                    <div class="service-price">от 500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Педикюр</h3>
+                        <p>Комплексный уход за стопами</p>
+                    </div>
+                    <div class="service-price">2500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Наращивание ногтей</h3>
+                        <p>Гелевое наращивание любой формы</p>
+                    </div>
+                    <div class="service-price">3500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Косметология -->
+        <div class="service-category">
+            <h2 class="category-title">✨ Косметология</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Чистка лица</h3>
+                        <p>Комбинированная или ультразвуковая чистка</p>
+                    </div>
+                    <div class="service-price">3000 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Массаж лица</h3>
+                        <p>Классический или скульптурный массаж</p>
+                    </div>
+                    <div class="service-price">2500 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Коррекция бровей</h3>
+                        <p>Моделирование формы бровей</p>
+                    </div>
+                    <div class="service-price">800 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>Окрашивание бровей и ресниц</h3>
+                        <p>Краска или хна</p>
+                    </div>
+                    <div class="service-price">1000 ₽</div>
+                    <a href="contacts.php" class="service-btn">Записаться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Акции -->
+    <div class="promo-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Специальные предложения</h2>
+                <p>Только в этом месяце</p>
+            </div>
+
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-badge">-20%</div>
+                    <h3>Комплекс "Преображение"</h3>
+                    <p>Стрижка + окрашивание + укладка</p>
+                    <div class="old-price">9000 ₽</div>
+                    <div class="new-price">7200 ₽</div>
+                    <a href="contacts.php" class="btn">Записаться</a>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-badge">-15%</div>
+                    <h3>Комплекс "Уход"</h3>
+                    <p>Маникюр + педикюр + покрытие</p>
+                    <div class="old-price">5500 ₽</div>
+                    <div class="new-price">4675 ₽</div>
+                    <a href="contacts.php" class="btn">Записаться</a>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-badge">Подарок</div>
+                    <h3>Счастливый час</h3>
+                    <p>При записи с 10:00 до 12:00</p>
+                    <p class="new-price">Скидка 10%</p>
+                    <p>на любую услугу</p>
+                    <a href="contacts.php" class="btn">Записаться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php include 'footer.php'; ?>
