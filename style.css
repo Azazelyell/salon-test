@@ -105,9 +105,11 @@ nav {
 }
 
 /* Hero для главной - черно-белая версия */
+
 .hero-home {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    
 }
 
 /* Hero для О нас - черно-белая версия */
@@ -446,6 +448,7 @@ nav {
 }
 
 /* Подвал */
+
 footer {
     background: #302626;
     /* более темный розовый */
@@ -468,7 +471,6 @@ footer {
     margin-bottom: 20px;
     font-size: 18px;
 }
-
 .footer-column p,
 .footer-column a {
     color: white;
